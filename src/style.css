@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'StratosSkyeng';
+    src: url(./fonts/stratosskyengweb-black.woff);
+    src: url(./fonts/stratosskyengweb-black.woff2);
+}
+
+body {
+    background-color: #004980;
+    pointer-events: auto;
+}
+    
+    /* ЭКРАН ВЫБОРА СЛОЖНОСТИ */
+
+
+.choose_level_screen {
+    display: flex;
+    justify-content: center;
+}
+
+.choose_level-div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    width: 480px;
+    height: 459px;
+    background: #C2F5FF;
+    border-radius: 12px;
+    margin-top: 160px;
+}
+
+.choose_level-title {
+    padding: 56px 0 24px 0;
+    width: 208px;
+    height: 96px;
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #004980;
+}
+
+.choose_level_form {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding-bottom: 72px;
+}
+
+.level-button {
+    width: 98px;
+    height: 98px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #0080C1;
+    border: none;
+    transition: all 0.3s;
+}
+
+.level-button:hover {
+    transform: scale(1.02);
+    box-shadow: #004980 2px 2px 16px;
+}
+
+.choose_level-button {
+    width: 246px;
+    height: 50px;
+    background: #7AC100;
+    border-radius: 12px;
+    border: none;
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    transition: all 0.3s;
+}
+
+.choose_level-button:hover {
+    transform: scale(1.02);
+    border: #004980;
+    box-shadow: #004980 2px 2px 16px;
+}
+
+.active {
+    transform: scale(1.02);
+    border: #004980;
+    box-shadow: #004980 2px 2px 16px;
+}
+
+    /* ЭКРАН ИГРЫ */
+
+.center {
+    padding-top: 24px;
+}
+
+.game_menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+} 
+
+.game_time {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+
+.timer {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #FFFFFF;
+}
+
+.game_timer_menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 155px;
+    gap: 58px;
+}
+
+.game_button {
+    width: 246px;
+    height: 50px;
+    left: 755px;
+    top: 52px;
+    background: #7AC100;
+    border: none;
+    border-radius: 12px;
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    transition: all 0.3s;
+}
+
+.game_button:hover {
+    transform: scale(1.02);
+    box-shadow: #C2F5FF 2px 2px 16px;
+}
+
+li {
+    list-style: none;
+}
+
+.deck {
+    padding: 48px 0 0 0;
+}
+
+.card_upside {
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: #C2F5FF 2px 2px 8px;
+}
+
+.deck {
+display: grid;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+justify-items: center;
+margin-bottom: 20px;
+gap: 15px;
+}
+
+.easy {
+    grid-template-columns: repeat(2, 95px);
+}
+
+.medium {
+    grid-template-columns: repeat(4, 95px);
+}
+
+.hard {
+    grid-template-columns: repeat(6, 95px);
+}
+
+.tilt {
+perspective: 10rem;
+}
+  
+.card {
+    background-image: url(./img/Upside.png);
+    scale: 1.4;
+}
+
+img {
+    user-select: none;
+}
+
+.memory-card {
+width: 98px;
+height: 140px;
+margin: 5px;
+position: relative;
+transform: scale(1);
+transform-style: preserve-3d;
+transition: transform .5s;
+}
+
+.overflow {
+    z-index: 100;
+    position: absolute;
+    width: 92%;
+    height: 92%;
+}
+
+.memory-card:active {
+transform: scale(0.97);
+transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+  }
+
+.front-face,
+.back-face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+
+}
+
+.back-face {
+    width: 96px;
+}
+
+.deck .card.flip {
+cursor: default;
+pointer-events: none;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.flip img {
+visibility: visible;
+height: 100%;
+}
+
+.deck .card.match {
+visibility: visible;
+cursor: default;
+animation: pulse 1s;
+animation-fill-mode: forwards;
+}
+
+
+.modal {
+display: none;
+position: fixed;
+z-index: 99;
+width: 100%;
+height: 100%;
+background: rgba(46, 61, 73, 0.6);
+}
+
+.modal-content {
+position: absolute;
+width: 480px;
+height: 459px;
+background: #C2F5FF;
+border-radius: 12px;
+left: calc(50% - 485px/2);
+top: calc(50% - 640px/2);
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.modal-img {
+top: 4.44%;
+bottom: -4.44%;
+padding-top: 32px;
+}
+
+h2 {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: #004980;
+    padding-top: 9px;
+}
+
+h3 {
+    font-family: 'StratosSkyeng';
+    font-style: normal; 
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.stats {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+
+
