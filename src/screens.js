@@ -7,18 +7,6 @@ function chooseLevelScreen() {
     window.application.renderBlock('chooseLevel', chooseLevel);
 };
 
-
-
-// chooseLevelStage.forEach(element => {
-//     element.addEventListener("click", function (event) {
-//         document.querySelectorAll('.level-button').forEach(element => {
-//             element.classList.remove('level-button');
-//         });
-//         chosenLevelNumber = element.textContent;
-//         element.classList.toggle('level-button');
-//     });
-// });
-
 window.application.screens['chooseLevel'] = chooseLevelScreen;
 window.application.renderScreen('chooseLevel');
 
@@ -31,5 +19,6 @@ function gameScreen() {
     window.application.blocks['game'] = gameBlock;
     window.application.renderBlock('game', game);
 
-
+    window.application.blocks['cardField'] = cardBlock;
+    window.application.renderBlock('cardField', game);
 };
